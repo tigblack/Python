@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</head>
+<body>
+<li><a href="/">Назад</a></li>
+<div class="left-ads-display col-lg-8">
+    <div class="row">
+        <div class="desc1-right col-md-6 pl-lg-4">
+            <h3 class="editContent" style="outline: none; cursor: inherit;">
+                {{ shark.title }}
+            </h3>
+            <h5 class="editContent"></h5>
+            <ul>
+                <li style="list-style: none">
+                    <span><b>Описание:</b>
+                        {{ shark.description }}
+                    </span>
+                </li>
+                <li style="list-style: none">
+                        {% for name in shark.name.all %}
+                            <span><b>Человек:</b>
+                            {{ name.name }}
+                            </span>
+                            <span><b>Возраст человека:</b>
+                            {{ name.age }}
+                            </span>
+                            <span><b>Описание человека:</b>
+                            {{ name.description }}
+                        {% endfor %}
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
